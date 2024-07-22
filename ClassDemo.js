@@ -1,9 +1,9 @@
 class Product {
-    // name;
-    // price;
-    // category;
-    // description;
-    // rating;
+    name;
+    price;
+    category;
+    description;
+    rating;
 
     constructor(productName, productPrice, productCategory, productDescription, productRating) {
         this.name = productName;
@@ -22,7 +22,7 @@ class Product {
     }
 
     displayProduct() {
-        console.log("Product displayed");
+        console.log("Product displayed", this);
     }
 
     buyProduct() {
@@ -34,3 +34,25 @@ class Product {
 let iphone = new Product("iPhone 12", 80000, "Mobile", "Apple iPhone 12", 4.5);
 
 console.log(iphone);
+
+iphone.displayProduct();
+
+/**
+ * 
+ * let obj ={
+    x:1,
+    y:2,
+
+    fn: function(){
+       let x = 3;
+       let y = 4;
+       const printVariables = () =>{
+            console.log(this.x,this.y)
+             console.log(x,y)
+
+       }
+        printVariables()
+    }
+}
+obj.fn()
+ */
