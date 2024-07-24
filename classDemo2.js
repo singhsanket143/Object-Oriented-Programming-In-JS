@@ -52,6 +52,19 @@ class Product {
         this.#category = c;
     }
 
+    get description(){
+        console.log("Getter called")
+        return this.#description;
+    }
+
+    set description(d){
+        if(d.length === 0) {
+            console.log("Invalid description");
+            return;
+        }
+        this.#description = d;
+    }
+
     addToCart() {
         console.log("Product added to cart");
     }
@@ -74,15 +87,9 @@ let iphone = new Product("Iphone 11", 900, "Electronics", "Apple Iphone 11", 4.5
 
 console.log(iphone);
 
-// iphone.name = "Iphone 13";
-// iphone.price = -1000;
-// iphone.category = "Electronics";
-
-iphone.setPrice(-1000);
-
+iphone.description = ""; // this calls the setter function
+console.log(iphone.description); // this calls the getter function
 iphone.displayProduct();
-
-console.log(iphone.getPrice())
 
 /**
  * 
