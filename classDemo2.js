@@ -1,11 +1,15 @@
 class Product {
     #name;
     #price;
-    category;
-    description;
-    rating;
+    #category;
+    #description;
+    #rating;
 
     constructor(productName, productPrice, productCategory, productDescription, productRating) {
+        if(productName === undefined || productPrice === undefined || productCategory === undefined || productDescription === undefined || productRating === undefined){
+            console.log("Invalid parameters");
+            return;
+        }
         this.#name = productName;
         if(productPrice > 0 && typeof(productPrice) === "number"){
             this.#price = productPrice;
@@ -25,6 +29,27 @@ class Product {
         } else {
             console.log("Invalid price");
         }
+    }
+
+    getName(){
+        return this.#name;
+    }
+
+    setName(n){
+        this.#name = n;
+    }
+
+    getCategory(){
+        return this.#category;
+    }
+
+    setCategory(c){
+
+        if(c === undefined){
+            console.log("Invalid category");
+            return;
+        }
+        this.#category = c;
     }
 
     addToCart() {
@@ -78,3 +103,4 @@ console.log(iphone.getPrice())
 }
 obj.fn()
  */
+
